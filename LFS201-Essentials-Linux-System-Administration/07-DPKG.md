@@ -1,6 +1,6 @@
-# Chapter 07 - DPKG
+# DPKG
 
-- [Chapter 07 - DPKG](#chapter-07---dpkg)
+- [DPKG](#dpkg)
     - [Package File Names](#package-file-names)
     - [Source Packages](#source-packages)
     - [DPKG Queries](#dpkg-queries)
