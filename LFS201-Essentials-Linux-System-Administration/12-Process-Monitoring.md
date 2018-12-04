@@ -12,7 +12,7 @@ Keeping track of process is an essential sysadmin task. ps has been a main tool 
 
 ## Monitoring Tools
 
-See chapter 11. for availabe monitoring tools. 
+See chapter 11. for available monitoring tools. 
 
 ## Viewing Process States with PS
 
