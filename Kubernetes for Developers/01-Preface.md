@@ -15,3 +15,12 @@ The notes' source material come from the The Linux Foundation Training class: LF
 * Use PersistentVolumeClaims for state persistence
 
 ## Table Of Content
+
+- [Preface](01-Preface.md)
+- [Kubernetes Architecture](02-Kubernetes-Architecture.md)
+- [Build](03-Build.md)
+- [Design](04-Design.md)
+- [Deployment Configuration](05-Deployment-Configuration.md)
+- [Security](06-Security.md)
+- [Exposing Application](07-Exposing-Application.md)
+- [Troubleshooting](08-Troubleshooting.md)
