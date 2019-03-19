@@ -15,6 +15,10 @@
   - [Ambassador](#ambassador)
   - [Jobs](#jobs)
   - [Labs](#labs)
+    - [Evaluate Network Plugins](#evaluate-network-plugins)
+      - [Multi-container Pod questions](#multi-container-pod-questions)
+    - [Designing Applications with Duration: Create a job](#designing-applications-with-duration-create-a-job)
+    - [Designing Applications with Duration: Create a CronJob](#designing-applications-with-duration-create-a-cronjob)
 
 ## Introduction
 
@@ -91,3 +95,66 @@ Jobs are part of the *batch* API group. They are used to run a set # of pods. If
 
 ## Labs
 
+### Evaluate Network Plugins
+
+#### Multi-container Pod questions
+
+* Which deployment method allow the most flexibility? 
+  * one per pod
+* Which deployment methods allows for the most granular scalability?
+  * one per pod 
+* Which have the best performance?
+  * multiple per pods
+* How many IP addresses are assigned per pod
+  * one
+* What are some ways containers can communicate within the same pod?
+  * IPC, loopback or shared fs
+* What are some reasons you should have multiple containers per pod
+*  To add small functionality as necessary like ambassadors and sidecare containers
+
+### Designing Applications with Duration: Create a job
+
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: sleepy
+spec:
+  completions: 5 # This line says that the job should complete 5 times to be succesfull
+  parallelism: 2 # This line says that the job will run two pods that run concurrently
+  activeDeadlineSeconds: 15 # this line says that the job will end once it rnus for 15 seconds
+  template:
+    spec:
+      containers:
+      - name: resting
+        image: busybox
+        command: ["/bin/sleep"]
+        args: ["3"] # This job sleeps for 3 seconds
+      restartPolicy: Never
+
+      #If this job is run, it will fail since it will only run four time, without being able to run the fifth job because it will die before it had the time.
+```
+
+### Designing Applications with Duration: Create a CronJob
+
+```yaml
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: sleepy
+spec:
+schedule: "*/2 * * * *" # Linux style cronjob syntax
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          activeDeadlineSeconds: 10 # This ensure that the job will die if it continues for more than 10 seconds
+      -     name: resting
+            image: busybox
+            command: ["/bin/sleep"]
+            args: ["30"] # This job sleeps for 30 seconds
+          restartPolicy: Never
+
+      #If this job is run, it never succeed since it will get terminated before the end
+```
