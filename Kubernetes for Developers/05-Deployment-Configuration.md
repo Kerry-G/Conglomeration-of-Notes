@@ -503,3 +503,12 @@ data:
 
 ### Rolling Updates and Rollback
 
+
+
+```bash
+kubectl edit deployment [name]                          # Change settings in the deployment to change the image version
+kubectl get events                                      # Verify the event
+kubectl rollout history deployment [name]               # View the update history of the deployment.
+kubectl rollout undo --dry-run=true deployment/[name]   # View the change that would happen if rollout
+kubectl rollout undo deployment [name] --to-revision=1  # Apply the effect we saw with --dry-run
+```
