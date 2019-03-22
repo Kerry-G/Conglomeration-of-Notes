@@ -1,7 +1,6 @@
 # Exposing Application
 
 - [Exposing Application](#exposing-application)
-  - [Overview](#overview)
   - [Service Type](#service-type)
   - [Services Diagram](#services-diagram)
   - [Service Update Pattern](#service-update-pattern)
@@ -12,10 +11,6 @@
   - [LoadBalancer](#loadbalancer)
   - [External Name](#external-name)
   - [Ingress Resource](#ingress-resource)
-
-## Overview
-
-
 
 ## Service Type
 
