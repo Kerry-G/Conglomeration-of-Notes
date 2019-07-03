@@ -71,4 +71,3 @@ Internode networking can be an issue too.
 * Cluster-wide: **Fluentd**: part of the CNCF, and combine well with Prometheus.
 
 Setting a Fluentd is a nice exercise to understand the DaemonSets. Fluentd aggregate the logs, feed them into an elasticseach and visualize it through Kibana
-
