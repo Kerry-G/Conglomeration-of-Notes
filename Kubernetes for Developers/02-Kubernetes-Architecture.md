@@ -172,7 +172,7 @@ K8s excepts the network configuration to enable pod-to-pod communication to be a
 
 K8s is standardizing on the CNI (Container Network Interface) specification. It is language agnostic.
 
-To have more information about this subject, [refer to here](https://github.com/containernetworking/cni).
+To have more informatino about this subject, [refer to here](https://github.com/containernetworking/cni).
 
 ## Pod-to-Pod communication
 
@@ -202,7 +202,7 @@ sudo apt-get install -y docker.io
 
 # Install kubeadm and kubectl
 sudo sh -c "echo 'deb http://apt.kubernetes.io/ kubernetes-xenial main' >> /etc/apt/sources.list.d/kubernetes.list"
-sudo sh -c"curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -"
+sudo sh -c "curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -"
 sudo apt-get update
 sudo apt-get install -y kubeadm=1.13.1-00 kubelet=1.13.1-00 kubectl=1.13.1-00
 
