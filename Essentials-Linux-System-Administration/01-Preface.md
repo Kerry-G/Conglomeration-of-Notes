@@ -1,5 +1,9 @@
 # Preface
 
+## Source
+
+The notes' source material come from the The Linux Foundation Training class: LFS201 - Essentials Linux System Administration
+
 - [Preface](01-Preface.md)
 - [Linux Filesystem Tree Layout](02-Linux-Filesystem-Tree-Layout.md)
 - [Processes](03-Processes.md)
@@ -44,6 +48,3 @@
 - [Local System Security](42-Local-System-Security.md)
 - [Basic Troubleshooting](43-Basic-Troubleshooting.md)
 - [System Rescue](44-System-Rescue.md)
-  
-Nothing really important; mostly if you don't really know what we are doing.
-Just do `man command` to get help or do LFS101 first.
